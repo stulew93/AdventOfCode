@@ -1,6 +1,6 @@
 # Ingest list of passwords; find the sub-set that have the specified letter between the min and max occurrences.
 
-# Initialise list, and target sum.
+# Initialise list.
 passwords_list = []
 
 # Parse values from file into list.
