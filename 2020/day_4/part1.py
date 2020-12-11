@@ -17,10 +17,11 @@ with open("passports.txt", 'r') as passports_file:
 keys_check = {'byr', 'iyr', 'eyr', 'hgt', 'hcl', 'ecl', 'pid'}
 
 # Initialise count of valid passports.
-valid = 0
+valid_passports = 0
 
+# Check that keys_check is subset of keys for each passport.
 for passport in passports_list:
     if keys_check <= passport.keys():
-        valid += 1
+        valid_passports += 1
 
-print("There are {} passports in the sample, of which {} are valid.".format(len(passports_list), valid))
+print("There are {} passports in the sample, of which {} are valid.".format(len(passports_list), valid_passports))
