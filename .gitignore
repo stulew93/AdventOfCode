@@ -3,4 +3,4 @@
 */workspace.xml
 
 # Ignore all files in any directory named test.
-/**/test.py
+*/**/test.py
