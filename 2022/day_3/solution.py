@@ -6,7 +6,7 @@ from AdventOfCode.common_functions import ingest_csv_to_list
 letters = string.ascii_letters
 # Dict for priority order.
 priority = {}
-i = 0
+i = 1
 for l in letters:
     priority[l] = i
     i += 1
@@ -21,7 +21,7 @@ def get_split_item_list(contents_list: list) -> list:
     split_items = []
     for contents in contents_list:
         num_items = len(contents)
-        split_item = set(contents[:(num_items/2)]).intersection(set(contents[num_items/2:]))
+        split_item = next(iter(set(contents[:int(num_items/2)]).intersection(set(contents[int(num_items/2):]))))
         split_items.append(split_item)
     return split_items
 
@@ -42,3 +42,15 @@ if __name__ == "__main__":
     filepath = "input.csv"
     input_list = ingest_csv_to_list(filepath)
     print(input_list)
+
+    test = [
+        "vJrwpWtwJgWrhcsFMMfFFhFp",
+        "jqHRNqRjqzjGDLGLrsFMfFZSrLrFZsSL",
+        "PmmdzqPrVvPwwTWBwg",
+        "wMqvLMZHhHMvwLHjbvcjnnSBnvTQFn",
+        "ttgJtRGJQctTZtZT",
+        "CrZsJsPPZsGzwwsLwLmpwMDw"
+    ]
+    test_output = get_total_priority(test)
+    print(type(test_output))
+    print(test_output)
