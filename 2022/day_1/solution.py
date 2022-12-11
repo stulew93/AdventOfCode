@@ -1,10 +1,4 @@
-def ingest_csv(filepath: str) -> list:
-    result_list = []
-    with open(filepath, 'r') as input_file:
-        for row in input_file:
-            result_list.append(str(row.strip()))
-
-    return result_list
+from common_functions import ingest_csv_to_list
 
 def create_nested_list(x: list) -> list:
     """
@@ -71,7 +65,7 @@ def get_three_greatest_vals(x: list) -> list:
 
 if __name__ == "__main__":
     filepath = "input.csv"
-    calorie_list = ingest_csv(filepath)
+    calorie_list = ingest_csv_to_list(filepath)
     list_by_elf = create_nested_list(calorie_list)
     print(list_by_elf)
     max_calories = get_max_nested_list_sum(list_by_elf)
